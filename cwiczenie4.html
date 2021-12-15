@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#przycisk").click(function(){
+                var szerokosc = $(".napis").width();
+                var wysokosc = $(".napis").height();
+                $("#info").html("szerokość" + ": " + szerokosc + "px" + " " + "<p>"+ "wysokosc: " + wysokosc + "px")
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="info"></div>
+    <div id="przycisk">Sprawdz szer wys ob</div>
+    <div class="napis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed doloribus sapiente adipisci exercitationem eos nisi vero suscipit quae officiis, accusantium ab rem iste excepturi ratione consequuntur ipsam nesciunt sint dolore.
+
+    </div>
+</body>
+</html>
