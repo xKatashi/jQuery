@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>Darmowy Kurs CSS</title>
+    <script type="text/javascript">
+        $(function () {
+            $("#dodaj").on("click", function () {
+                var val = $("#input0").val();
+                if (val != "") {
+                    var element = $("<li></li>").text(val);
+                    $(element).append("<button class='mojaklasa'>❌</button>");
+                    $("#lista").append(element);
+                    $("input").val("");
+                    $(".mojaklasa").on("click", function () {
+                        $(this).parent().remove();
+                    });
+                } else {
+                    alert("NIE MOZNA DODAC PUSTEGO PUNKTU DO LISTY");
+                };
+            });
+            $(function () {
+                $("#Dodaj1").on("click", function () {
+                    var wartosc1 = $("#input1").val();
+                    var wartosc2 = $("#input2").val();
+                    var suma = parseInt(wartosc1) + parseInt(wartosc2);
+                    console.log(suma);
+                    $("#wynik").html("wynik: " + suma);
+                });
+            });
+
+        });
+        $(function () {
+            $("#Odejmij").on("click", function () {
+                var wartosc1 = $("#input1").val();
+                var wartosc2 = $("#input2").val();
+                var suma = parseInt(wartosc1) - parseInt(wartosc2);
+                console.log(suma);
+                $("#wynik").html("wynik: " + suma);
+            });
+        });
+        $(function () {
+            $("#Pomnoz").on("click", function () {
+                var wartosc1 = $("#input1").val();
+                var wartosc2 = $("#input2").val();
+                var suma = parseInt(wartosc1) * parseInt(wartosc2);
+                console.log(suma);
+                $("#wynik").html("wynik: " + suma);
+            });
+        });
+        $(function () {
+            $("#div2").mouseover(function () {
+                $(this).addClass("div1");
+            });
+            $("#div2").mouseout(function () {
+                $(this).removeClass("div1");
+            });
+            jQuery(function(){
+             $("#div3").mouseover(function(){
+                $("#div3").fadeIn(500);
+                $("#div3").fadeOut(500);
+                $("#div3").fadeIn(500);
+             });
+        });
+        $("button").click(function(){
+                for(let i=0; i<=10; i++){
+                $("#div4").css("color","purple").slideUp(2000).slideDown(2000);
+            }
+            });
+        });
+    </script>
+    <style>
+        #div4{
+            background-color: bisque;
+            width: 100;
+            height: 100;
+        }
+        #caly_blok {
+            font-size: 24px;
+        }
+
+        #naglowek {
+            background-color: gold;
+            text-align: center;
+        }
+
+        #lewy {
+            float: left;
+            background-color: #DDD;
+            height: 700px;
+            width: 30%;
+        }
+
+        .div1 {
+            background-color: bisque;
+            font-size: 24pt;
+            text-align: center;
+            padding: 20px;
+            border: 4px solid purple;
+
+        }
+
+        #prawy {
+            float: left;
+            background-color: #EEE;
+            height: 400px;
+            width: 70%;
+        }
+
+        #prawy_dol {
+            float: left;
+            background-color: rgb(216, 215, 215);
+            height: 300px;
+            width: 70%;
+        }
+
+        #stopka {
+            clear: both;
+            background-color: gold;
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+            padding: 15px;
+        }
+
+        input {
+            margin-left: 10px;
+        }
+
+        #wynik {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="caly_blok">
+        <div id="naglowek">Stronka ziomalska</div>
+
+        <div id="lewy">
+            <p>
+                plan działania:
+
+            <ol id="lista"></ol>
+            <input type="text" placeholder="Nowy punk listy" id="input0">
+            <button id="dodaj"> ➕ </button>
+            </p>
+        </div>
+
+        <div id="prawy">
+            <p>kalkulator:</p>
+            <input type="number" placeholder="podaj liczbe nr1" id="input1">
+            <input type="number" placeholder="podaj liczbe nr2" id="input2">
+            <button id="Dodaj1">Dodaj</button><button id="Odejmij">Odejmij</button><button id="Pomnoz">Pomnóż</button>
+            <div id="wynik"></div>
+        </div>
+        <div id="prawy_dol">
+            Animacje:
+            <div id="div2">najedz na mnie</div>
+            <div id="div3">najedz na mnie x2</div>
+            <div id="div4">O_O</div>
+            <button>zmien polozenie</button>
+        </div>
+        <div id="stopka">COPYRIGHT &copy;</div>
+    </div>
+
+</body>
+
+</html>
